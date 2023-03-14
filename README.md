@@ -1,3 +1,14 @@
+# ASD Management
+
+Responsive Web App for the management of a sports association.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8d5c1b60-cbc3-4e95-8602-30949fbc942d/deploy-status)](https://app.netlify.com/sites/asd-management/deploys)
+[![codecov](https://codecov.io/gh/aleattene/asd-management-webapp-responsive/branch/main/graph/badge.svg?token=TBZQE4DBR3)](https://codecov.io/gh/aleattene/asd-management-webapp-responsive)
+
+Temporary deploy:
+https://asd-management.netlify.app/
+![image](https://user-images.githubusercontent.com/74595044/153876039-85241269-cc8b-40ec-94db-9def28df9d5e.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
