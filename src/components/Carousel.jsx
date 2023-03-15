@@ -7,7 +7,7 @@ function CarouselThreeSlides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="bolt_1920_910.jpg"
+                    src="./img/bolt_1920_910.jpg"
                     alt="First slide"
                 />
                 <Carousel.Caption>
@@ -16,7 +16,7 @@ function CarouselThreeSlides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="rossi_1920_910.jpg"
+                    src="./img/rossi_1920_910.jpg"
                     alt="Second slide"
                 />
                 <Carousel.Caption>
@@ -25,7 +25,7 @@ function CarouselThreeSlides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="federer_1920_910.jpg"
+                    src="./img/federer_1920_910.jpg"
                     alt="Third slide"
                 />
                 <Carousel.Caption>

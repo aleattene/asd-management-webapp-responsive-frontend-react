@@ -1,12 +1,16 @@
 import React from 'react';
 import Navbar from "./Navbar";
-import Carousel from "./Carousel";
+import LoginForm from "./LoginForm";
+import CarouselThreeSlides from "./Carousel";
+import Footer from "./Footer";
 
 const Home = () => {
     return (
         <div>
             <Navbar />
-            <Carousel />
+            <CarouselThreeSlides />
+            <LoginForm />
+            <Footer />
         </div>
     );
 };
