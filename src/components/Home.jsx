@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 const Home = () => {
     return (
-        <div>
+        <div style={{maxWidth: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
             <Navbar />
             <CarouselThreeSlides />
             <LoginForm />
