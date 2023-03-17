@@ -1,10 +1,43 @@
 import './App.css';
-import Home from "./components/Home";
+import Home from "./components/pages/Home";
+import MainNavbar from "./components/MainNavbar";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React from "react";
+import Footer from "./components/Footer";
+import Products from "./components/pages/Products";
 
 function App() {
   return (
       <div className="App">
-        <Home />
+           <div className="main-container">
+               <MainNavbar />
+               <BrowserRouter>
+                   <Routes>
+                       <Route exact path="/" element={<Home/>} />
+                       <Route exact path="/products" element={<Products/>} />
+                   </Routes>
+               </BrowserRouter>
+               <Footer/>
+          </div>
+          <style>
+              {`
+                .main-container {
+                  max-width: 70%;
+                  margin: 0 auto;
+                }
+    
+                @media screen and (max-width: 992px) {
+                  .main-container {
+                    max-width: 85%;
+                  }
+                }
+                @media screen and (max-width: 768px) {
+                  .main-container {
+                    max-width: 100%;
+                  }
+                }
+          `}
+          </style>
       </div>
   );
 }
