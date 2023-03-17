@@ -9,15 +9,15 @@ import Products from "./components/pages/Products";
 function App() {
   return (
       <div className="App">
-           <div className="main-container">
-               <MainNavbar />
-               <BrowserRouter>
-                   <Routes>
-                       <Route exact path="/" element={<Home/>} />
-                       <Route exact path="/products" element={<Products/>} />
-                   </Routes>
-               </BrowserRouter>
-               <Footer/>
+          <div className="main-container">
+              <MainNavbar />
+              <BrowserRouter>
+                  <Routes>
+                      <Route exact path="/" element={<Home/>} />
+                      <Route exact path="/products" element={<Products/>} />
+                  </Routes>
+              </BrowserRouter>
+              <Footer/>
           </div>
           <style>
               {`
