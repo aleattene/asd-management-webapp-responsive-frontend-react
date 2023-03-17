@@ -1,9 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
+import React from "react";
 
 function CarouselThreeSlides() {
     return (
-        <div>
-        <Carousel>
+        <div className="carousel">
+        <Carousel style={{ maxWidth: '200vh', margin: '0 auto' }}>
             <Carousel.Item>
                 <img
                     className="d-block w-100"

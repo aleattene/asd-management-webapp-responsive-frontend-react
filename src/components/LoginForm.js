@@ -2,10 +2,10 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 function LoginForm() {
     return (
-        <div className="bg-dark mt-1 mb-1" style={{ width: '100%'}}>
+        <div className="bg-dark mt-1 mb-1">
             <Container>
                 <Row>
-                    <Col md={{ span: 6, offset: 3 }}>
+                    <Col md={{ span: 10, offset: 1 }}>
                         <Form>
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>

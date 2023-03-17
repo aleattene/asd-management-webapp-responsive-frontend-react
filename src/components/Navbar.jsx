@@ -14,7 +14,7 @@ const NavBar = () => {
         <div>
             {// [false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
             [false].map((expand) => (
-                <Navbar bg="dark" variant="dark" expand="xl" className="mb-1 text-light">
+                <Navbar bg="dark" variant="dark" expand="xxl" className="mb-1 text-light">
                     <Container fluid>
 
                         <Navbar.Brand href="#">
