@@ -4,11 +4,11 @@ function LoginForm() {
     return (
         <div className="bg-dark mt-1 mb-1">
             <Row>
-                <Col md={{ span: 10, offset: 1 }}>
-                    <Form>
+                <Col md={{ span: 8, offset: 2 }}>
+                    <Form className="px-3">
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" placeholder="Enter email"/>
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text>
@@ -16,7 +16,7 @@ function LoginForm() {
 
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control type="password" placeholder="Password"/>
                         </Form.Group>
                         <Button variant="primary" type="submit" className="mt-5 mb-5">
                             Submit
