@@ -19,17 +19,12 @@ const MainNavbar = () => {
                             <Logo />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbar-nav" />
-                        <Navbar.Collapse id="navbar-nav">
+                        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                             <Nav>
                                 <DropdownServices />
                                 <DropdownDocs />
                                 <DropdownAnagrafiche />
                                 <DropdownBandi />
-                            </Nav>
-                        </Navbar.Collapse>
-
-                        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-                            <Nav>
                                 <DropdownUser />
                             </Nav>
                         </Navbar.Collapse>
