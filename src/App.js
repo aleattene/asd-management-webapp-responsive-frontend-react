@@ -21,19 +21,19 @@ function App() {
           </div>
           <style>
               {`
-                .main-container {
-                  max-width: 70%;
+                .main-container {  
+                  width: 70%;
                   margin: 0 auto;
                 }
     
                 @media screen and (max-width: 992px) {
                   .main-container {
-                    max-width: 85%;
+                    min-width: 85%;
                   }
                 }
                 @media screen and (max-width: 768px) {
                   .main-container {
-                    max-width: 100%;
+                    min-width: 100%;
                   }
                 }
           `}
