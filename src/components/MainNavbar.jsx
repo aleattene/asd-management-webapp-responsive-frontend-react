@@ -21,11 +21,11 @@ const MainNavbar = () => {
                         <Navbar.Toggle aria-controls="navbar-nav" />
                         <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                             <Nav>
-                                <DropdownServices />
-                                <DropdownDocs />
-                                <DropdownAnagrafiche />
-                                <DropdownBandi />
-                                <DropdownUser />
+                                <DropdownServices className="mx-2" />
+                                <DropdownDocs className="mx-2" />
+                                <DropdownAnagrafiche className="mx-2" />
+                                <DropdownBandi className="mx-2" />
+                                <DropdownUser className="mx-2" />
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

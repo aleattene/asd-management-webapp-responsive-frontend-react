@@ -3,7 +3,7 @@ import React from "react";
 
 const DropdownDocs = () => {
     return (
-    <NavDropdown title="Gestione Documentazione" id="docs-dropdown">
+    <NavDropdown title="Gestione Documentazione" id="docs-dropdown" className="mx-auto">
         <NavDropdown.Item href="#">Registra Movimento Finanziario</NavDropdown.Item>
         <NavDropdown.Item href="#">Visualizza Movimenti Finanziari</NavDropdown.Item>
         <NavDropdown.Divider />
