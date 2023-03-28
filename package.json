@@ -15,8 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@svgr/webpack": "^6.5.1",
-    "typescript": "^5.0.2"
+    "@svgr/webpack": "^6.5.1"
   },
   "overrides": {
     "@svgr/webpack": "$@svgr/webpack"
