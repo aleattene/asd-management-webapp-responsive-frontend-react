@@ -1,14 +1,16 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
+import StaffNavbar from "../../StaffNavbar";
 
-const Products = () => {
+const HomeStaff = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
+            <StaffNavbar />
             <Container fluid>
-                PAGINA PRODUCT
+                ELENCO CARD
             </Container>
         </div>
     );
 }
 
-export default Products;
+export default HomeStaff;
