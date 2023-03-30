@@ -1,6 +1,6 @@
 
 const SERVER_URL = "https://jsonplaceholder.typicode.com";
-const productsURL = "/posts"
+// const productsURL = "/posts"
 
 const generateURL = (url, params = []) => {
     const urlServerWithoutAuth = `${SERVER_URL}${url}`;
@@ -17,6 +17,6 @@ const generateURL = (url, params = []) => {
 
 export {
     SERVER_URL,
-    productsURL,
+    // productsURL,
     generateURL
 };
