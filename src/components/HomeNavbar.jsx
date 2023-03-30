@@ -2,14 +2,10 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import DropdownServices from "./dropdowns/Products";
 import Logo from "./Logo";
-import DropdownDocs from "./dropdowns/Documentazione";
-import DropdownAnagrafiche from "./dropdowns/Anagrafiche";
-import DropdownBandi from "./dropdowns/Bandi";
-import DropdownUser from "./dropdowns/Utente";
+import {NavLink} from "react-router-dom";
 
-const MainNavbar = () => {
+const HomeNavbar = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <Container fluid>
@@ -21,11 +17,12 @@ const MainNavbar = () => {
                         <Navbar.Toggle aria-controls="navbar-nav" />
                         <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                             <Nav>
-                                <DropdownServices className="mx-2" />
-                                <DropdownDocs className="mx-2" />
-                                <DropdownAnagrafiche className="mx-2" />
-                                <DropdownBandi className="mx-2" />
-                                <DropdownUser className="mx-2" />
+                                <NavLink to="/staff" className="nav-link mx-2">
+                                    Accesso Staff
+                                </NavLink>
+                                <NavLink to="/admin" className="nav-link mx-2">
+                                    Accesso Admin
+                                </NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
@@ -35,6 +32,6 @@ const MainNavbar = () => {
     );
 };
 
-export default MainNavbar;
+export default HomeNavbar;
 
 
