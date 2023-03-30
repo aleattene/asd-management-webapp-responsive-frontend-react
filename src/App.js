@@ -1,22 +1,23 @@
 import './App.css';
 import Home from "./components/pages/Home";
-import MainNavbar from "./components/MainNavbar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import React from "react";
 import Footer from "./components/Footer";
-import Products from "./components/pages/Products";
+import Products from "./components/pages/staff/Products";
+import HomeAdmin from "./components/pages/admin/HomeAdmin";
+import HomeStaff from "./components/pages/staff/HomeStaff";
 
 function App() {
   return (
       <div className="App">
           <div className="main-container">
-              <MainNavbar />
-              <BrowserRouter>
                   <Routes>
-                      <Route exact path="/" element={<Home/>} />
-                      <Route exact path="/products" element={<Products/>} />
+                      <Route path="/" element={<Home/>} />
+                      <Route path="/admin" element={<HomeAdmin/>} />
+                      <Route path="/staff" element={<HomeStaff/>} />
+                      <Route path="/products" element={<Products/>} />
+                      <Route path="*" element={<Home/>} />
                   </Routes>
-              </BrowserRouter>
               <Footer/>
           </div>
           <style>
@@ -32,7 +33,7 @@ function App() {
                   }
                 }
                 @media screen and (max-width: 768px) {
-                  .main-container {
+                  .main-container{
                     min-width: 100%;
                   }
                 }

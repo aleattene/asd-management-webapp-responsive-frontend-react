@@ -1,18 +1,16 @@
 import React from 'react';
-import CarouselThreeSlides from "../Carousel";
 import Container from "react-bootstrap/Container";
-import HomeNavbar from "../HomeNavbar";
+import AdminNavbar from "../../AdminNavbar";
 
-const Home = () => {
+const HomeAdmin = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <HomeNavbar/>
+            <AdminNavbar />
             <Container fluid>
-                    <CarouselThreeSlides/>
-                    {/*<LoginForm/>*/}
+                ADMIN AREA
             </Container>
         </div>
     );
 }
 
-export default Home;
+export default HomeAdmin;
