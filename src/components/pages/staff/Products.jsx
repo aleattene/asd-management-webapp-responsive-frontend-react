@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {getProductsService} from "../../../services/products.service";
 import {Table} from "react-bootstrap";
+import StaffNavbar from "../../StaffNavbar";
 
 const Products = () => {
 
@@ -18,7 +19,7 @@ const Products = () => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-
+            <StaffNavbar />
             <Container fluid>
                 <Table responsive>
                     <HeaderProducts />
