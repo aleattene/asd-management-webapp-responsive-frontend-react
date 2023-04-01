@@ -1,16 +1,14 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
-import StaffNavbar from "../../StaffNavbar";
 
-const HomeStaff = () => {
+const Staff = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <StaffNavbar />
             <Container fluid>
-                ELENCO CARD
+                TO FIX -> CREATE CARDS
             </Container>
         </div>
     );
 }
 
-export default HomeStaff;
+export default Staff;
