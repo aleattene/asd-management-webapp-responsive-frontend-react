@@ -7,6 +7,7 @@ import StaffNavbar from "../../StaffNavbar";
 import Athletes from "./customers/Athletes";
 import Trainers from "./customers/Trainers";
 import Doctors from "./customers/Doctors";
+import Companies from "./customers/Companies";
 
 const Staff = () => {
     return (
@@ -19,6 +20,7 @@ const Staff = () => {
                     <Route path="/athletes" element={<Athletes/>} />
                     <Route path="/trainers" element={<Trainers/>} />
                     <Route path="/doctors" element={<Doctors/>} />
+                    <Route path="/companies" element={<Companies/>} />
                 </Routes>
 
             </Container>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getAthletesService} from "../../../../services/athletes.service";
+import {getAthletesService} from "../../../../services/customers/athletes.service";
 
 const Athletes = () => {
 
