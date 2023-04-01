@@ -6,8 +6,8 @@ const DropdownServices = () => {
     const titleDropdown = "Gestione Prodotti";
     const idDropdown = "services-dropdown";
     const productsItems = [
-        { description: "Inserisci Prodotto", path: "/products" },
-        { description: "Visualizza Prodotti", path: "/products" },
+        { description: "Inserisci Prodotto", path: "/staff/products" },
+        { description: "Visualizza Prodotti", path: "/staff/products" },
     ]
     return (
         <NavDropdown title={ titleDropdown } id={ idDropdown } className="mx-auto">

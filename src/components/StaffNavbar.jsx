@@ -4,10 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import DropdownServices from "./dropdowns/Products";
 import Logo from "./Logo";
-import DropdownDocs from "./dropdowns/Documentazione";
-import DropdownAnagrafiche from "./dropdowns/Anagrafiche";
+import DropdownDocs from "./dropdowns/Documentations";
+import DropdownAnagrafiche from "./dropdowns/Customers";
 import DropdownBandi from "./dropdowns/Bandi";
-import DropdownUser from "./dropdowns/Utente";
+import DropdownUser from "./dropdowns/Users";
 
 const StaffNavbar = () => {
     return (
