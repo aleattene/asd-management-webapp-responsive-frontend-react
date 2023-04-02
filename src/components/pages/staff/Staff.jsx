@@ -8,12 +8,13 @@ import Athletes from "./customers/Athletes";
 import Trainers from "./customers/Trainers";
 import Doctors from "./customers/Doctors";
 import Companies from "./customers/Companies";
+import Transactions from "./documentations/Transactions";
 
 const Staff = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <StaffNavbar />
-            <Container fluid>
+            <Container fluid style={{minWidth: "80%"}}>
                 <Routes>
                     <Route path="/" element={<HomeStaff/>} />
                     <Route path="/products" element={<Products/>} />
@@ -21,6 +22,7 @@ const Staff = () => {
                     <Route path="/trainers" element={<Trainers/>} />
                     <Route path="/doctors" element={<Doctors/>} />
                     <Route path="/companies" element={<Companies/>} />
+                    <Route path="/transactions" element={<Transactions/>} />
                 </Routes>
 
             </Container>
