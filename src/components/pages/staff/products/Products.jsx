@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
-import {getProductsService} from "../../../../services/products.service";
+import {getProductsService} from "../../../../services/products/products.service";
 import {Table} from "react-bootstrap";
 
 const Products = () => {

@@ -9,6 +9,7 @@ import Trainers from "./customers/Trainers";
 import Doctors from "./customers/Doctors";
 import Companies from "./customers/Companies";
 import Transactions from "./documentations/Transactions";
+import Invoices from "./documentations/Invoices";
 
 const Staff = () => {
     return (
@@ -23,6 +24,7 @@ const Staff = () => {
                     <Route path="/doctors" element={<Doctors/>} />
                     <Route path="/companies" element={<Companies/>} />
                     <Route path="/transactions" element={<Transactions/>} />
+                    <Route path="/invoices" element={<Invoices/>} />
                 </Routes>
 
             </Container>

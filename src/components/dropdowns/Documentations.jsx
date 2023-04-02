@@ -10,7 +10,7 @@ const DropdownDocs = () => {
         { description: "Registra Movimento Finanziario", path: "/staff/transactions" },
         { description: "Visualizza Movimenti Finanziari", path: "/staff/transactions" },
         { description: "Registra Iscrizione Atleta", path: "/staff/enrollments" },
-        { description: "Visualizza Movimenti Finanziari", path: "/staff/enrollments" },
+        { description: "Visualizza Iscrizioni Atleti", path: "/staff/enrollments" },
         { description: "Registra Certificazione Sanitaria", path: "/staff/healtcerts" },
         { description: "Visualizza Certificazioni Sanitarie", path: "/staff/healtcerts" },
         { description: "Registra Compenso Collaboratore", path: "/staff/remunerations" },
