@@ -10,6 +10,7 @@ import Doctors from "./customers/Doctors";
 import Companies from "./customers/Companies";
 import Transactions from "./documentations/Transactions";
 import Invoices from "./documentations/Invoices";
+import Remunerations from "./documentations/Remunerations";
 
 const Staff = () => {
     return (
@@ -25,6 +26,7 @@ const Staff = () => {
                     <Route path="/companies" element={<Companies/>} />
                     <Route path="/transactions" element={<Transactions/>} />
                     <Route path="/invoices" element={<Invoices/>} />
+                    <Route path="/remunerations" element={<Remunerations/>} />
                 </Routes>
 
             </Container>

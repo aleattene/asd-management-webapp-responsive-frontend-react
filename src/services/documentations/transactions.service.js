@@ -7,9 +7,7 @@ const getTransactionsService = async () => {
     ];*/
     //const url = generateURL(productsURL, params)
     const url = "https://82976a2d-7e38-446c-baf2-6cbe3b7d67b2.mock.pstmn.io/api/v1/transactions"
-    const data = getService(url)
-    console.log(data)
-    return data;
+    return getService(url);
 }
 
 export { getTransactionsService };
