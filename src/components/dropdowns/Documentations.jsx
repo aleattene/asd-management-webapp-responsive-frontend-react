@@ -7,18 +7,18 @@ const DropdownDocs = () => {
     const titleDropdown = "Gestione Documentazione";
     const idDropdown = "docs-dropdown";
     const documentazioneItems = [
-        { description: "Registra Movimento Finanziario", path: "/staff/transactions" },
-        { description: "Visualizza Movimenti Finanziari", path: "/staff/transactions" },
-        { description: "Registra Iscrizione Atleta", path: "/staff/enrollments" },
-        { description: "Visualizza Iscrizioni Atleti", path: "/staff/enrollments" },
-        { description: "Registra Certificazione Sanitaria", path: "/staff/healtcerts" },
-        { description: "Visualizza Certificazioni Sanitarie", path: "/staff/healtcerts" },
-        { description: "Registra Compenso Collaboratore", path: "/staff/remunerations" },
-        { description: "Visualizza Compensi Collaboratori", path: "/staff/remunerations" },
-        { description: "Registra Fattura", path: "/staff/invoices" },
-        { description: "Visualizza Fatture", path: "/staff/invoices" },
-        { description: "Registra Acquisto", path: "/staff/purchases" },
-        { description: "Visualizza Acquisti", path: "/staff/purchases" },
+        { description: "Registra Movimento Finanziario", path: "/staff/documentations/transactions" },
+        { description: "Visualizza Movimenti Finanziari", path: "/staff/documentations/transactions" },
+        { description: "Registra Iscrizione Atleta", path: "/staff/documentations/enrollments" },
+        { description: "Visualizza Iscrizioni Atleti", path: "/staff/documentations/enrollments" },
+        { description: "Registra Certificazione Sanitaria", path: "/staff/documentations/healtcerts" },
+        { description: "Visualizza Certificazioni Sanitarie", path: "/staff/documentations/healtcerts" },
+        { description: "Registra Compenso Collaboratore", path: "/staff/documentations/remunerations" },
+        { description: "Visualizza Compensi Collaboratori", path: "/staff/documentations/remunerations" },
+        { description: "Registra Fattura", path: "/staff/documentations/invoices" },
+        { description: "Visualizza Fatture", path: "/staff/documentations/invoices" },
+        { description: "Registra Acquisto", path: "/staff/documentations/purchases" },
+        { description: "Visualizza Acquisti", path: "/staff/documentations/purchases" },
         { description: "Acquisti e Ricevute Fiscali", path: "tofix" }
     ];
 

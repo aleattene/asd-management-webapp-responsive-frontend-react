@@ -19,11 +19,10 @@ const Staff = () => {
                     <Route path="/products" element={<Products/>} />
                     <Route path="/products" element={<Products/>} />
                     <Route path="/customers/*" element={<Customers/>} />
-                    <Route path="/transactions" element={<Transactions/>} />
-                    <Route path="/invoices" element={<Invoices/>} />
-                    <Route path="/remunerations" element={<Remunerations/>} />
+                    <Route path="/documentations/transactions" element={<Transactions/>} />
+                    <Route path="/documentations/invoices" element={<Invoices/>} />
+                    <Route path="/documentations/remunerations" element={<Remunerations/>} />
                 </Routes>
-
             </Container>
         </div>
     );

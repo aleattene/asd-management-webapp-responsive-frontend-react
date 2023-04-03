@@ -10,7 +10,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/servizio_1920_1280.jpg",
         alt: "Prodotti",
-        linkTo: "/staff/products"
+        linkTo: "./products"
     },
     {
         title: "Gestione Documentazione",
@@ -18,7 +18,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/documentazione_1920_1280.jpg",
         alt: "Documenti",
-        linkTo: "/staff/documentations",
+        linkTo: "./documentations",
     },
     {
         title: "Gestione Anagrafiche",
@@ -27,7 +27,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/anagrafica_1920_1280.jpg",
         alt: "Anagrafiche",
-        linkTo: "/staff/customers",
+        linkTo: "./customers",
     },
     {
         title: "Gestione Bandi",
@@ -36,7 +36,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/bando_1920_1280.jpg",
         alt: "Bandi",
-        linkTo: "/staff/tenders",
+        linkTo: "./tenders",
     }
 
 ]

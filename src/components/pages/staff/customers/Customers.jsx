@@ -18,7 +18,6 @@ const Customers = () => {
                     <Route path="/doctors" element={<Doctors/>} />
                     <Route path="/companies" element={<Companies/>} />
                 </Routes>
-
             </Container>
         </div>
     );

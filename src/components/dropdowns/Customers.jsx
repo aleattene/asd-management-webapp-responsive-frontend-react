@@ -7,10 +7,10 @@ const DropdownAnagrafiche = () => {
     const titleDropdown = "Gestione Anagrafiche";
     const idDropdown = "anagrafiche-dropdown";
     const anagraficheItems = [
-        { description: "Gestione Atleti", path: "/staff/athletes" },
-        { description: "Gestione Collaboratori", path: "/staff/trainers" },
-        { description: "Gestione Medici", path: "/staff/doctors" },
-        { description: "Gestione Società", path: "/staff/companies" },
+        { description: "Gestione Atleti", path: "/staff/customers/athletes" },
+        { description: "Gestione Collaboratori", path: "/staff/customers/trainers" },
+        { description: "Gestione Medici", path: "/staff/customers/doctors" },
+        { description: "Gestione Società", path: "/staff/customers/companies" },
     ];
 
     return (
