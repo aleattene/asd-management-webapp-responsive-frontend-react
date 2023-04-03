@@ -13,7 +13,7 @@ const cardProperties = [
         linkTo: "/staff/products"
     },
     {
-        title: "Gestione Documentale",
+        title: "Gestione Documentazione",
         description: "In questa sezione è possibile gestire la documentazione della A.S.D.",
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/documentazione_1920_1280.jpg",

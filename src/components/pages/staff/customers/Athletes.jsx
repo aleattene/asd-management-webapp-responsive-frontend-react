@@ -17,9 +17,9 @@ const Athletes = () => {
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex', flexDirection: 'column' }}>
             <Container fluid>
-                <Table responsive>
+                <Table responsive hover>
                     <HeaderAthletes />
                 {/*JSON.stringify(products)*/}
                 { athletes.map((athlete) => {
@@ -63,7 +63,7 @@ const HeaderAthletes = () => {
 
 const RowAthletes = (props) => {
     return (
-        <tbody>
+        <tbody style={{backgroundColor: "#FFFFF0"}}>
             <tr>
                 <td> { props.atleta } </td>
                 <td> { props.dataNascita }</td>

@@ -59,7 +59,7 @@ const HeaderCompanies = () => {
 
 const RowCompanies = (props) => {
     return (
-        <tbody>
+        <tbody style={{backgroundColor: "#FFFFF0"}}>
             <tr>
                 <td> { props.codCompany } </td>
                 <td> { props.businessName }</td>

@@ -61,7 +61,7 @@ const HeaderTrainers = () => {
 
 const RowTrainers = (props) => {
     return (
-        <tbody>
+        <tbody style={{backgroundColor: "#FFFFF0"}}>
             <tr>
                 <td> { props.cognome } </td>
                 <td> { props.nome }</td>
