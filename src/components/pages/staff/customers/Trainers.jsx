@@ -18,9 +18,12 @@ const Trainers = () => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <Container fluid>
-                <Table responsive>
+            <Container fluid style={{ padding: "0"}}>
+                <Table responsive hover
+                       style={{ margin: "0",
+                           border: "3px solid #343A40"}}>
                     <HeaderTrainers />
+                    { /* TO FIX -> remunerations empty or not object */ }
                 {/*JSON.stringify(products)*/}
                 { trainers.map((trainer) => {
                     return (
@@ -46,8 +49,10 @@ const HeaderTrainers = () => {
     ]
 
     return (
-        <thead>
-            <tr style={{bgColor: "red"}}>
+        <thead style={{backgroundColor: "#FFB691"}}>
+        <tr style={{
+            fontWeight: "600",
+            color: "#343A40"}}>
                 {headers.map(h => {
                     return (
                         <td> { h } </td>
@@ -62,7 +67,7 @@ const HeaderTrainers = () => {
 const RowTrainers = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-            <tr>
+            <tr style={{borderBottom: "lightgray"}}>
                 <td> { props.cognome } </td>
                 <td> { props.nome }</td>
                 <td> { props.fiscalCode } </td>

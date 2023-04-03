@@ -18,12 +18,13 @@ const Remunerations = () => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <Container fluid>
-                <Table responsive>
+            <Container fluid style={{ padding: "0"}}>
+                <Table responsive hover
+                       style={{ margin: "0",
+                           border: "3px solid #343A40"}}>
                     <HeaderRemunerations />
-                    { /* TO FIX -> remunarations empty or not object */ }
+                    { /* TO FIX -> remunerations empty or not object */ }
                     {/*JSON.stringify(products)*/}
-                    { /* TO FIX -> remunarations empty or not object */ }
                 { remunerations.map((remun) => {
                     return (
                         <RowRemunerations
@@ -53,8 +54,10 @@ const HeaderRemunerations = () => {
     ]
 
     return (
-        <thead>
-            <tr style={{bgColor: "red"}}>
+        <thead style={{backgroundColor: "#FFB691"}}>
+            <tr style={{
+                fontWeight: "600",
+                color: "#343A40"}}>
                 {headers.map(h => {
                     return (
                         <td> { h } </td>
@@ -68,8 +71,8 @@ const HeaderRemunerations = () => {
 
 const RowRemunerations = (props) => {
     return (
-        <tbody>
-            <tr>
+        <tbody style={{backgroundColor: "#FFFFF0"}}>
+            <tr style={{borderBottom: "lightgray"}}>
                 <td> { props.idRemuneration } </td>
                 <td> { props.trainerName  + " " + props.trainerSurname } </td>
                 <td> € { props.amount.toFixed(2) } </td>
@@ -85,13 +88,5 @@ const RowRemunerations = (props) => {
         </tbody>
     )
 }
-
-
-
-
-
-
-
-
 
 export default Remunerations;

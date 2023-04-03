@@ -18,9 +18,12 @@ const Athletes = () => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column' }}>
-            <Container fluid>
-                <Table responsive hover>
+            <Container fluid style={{ padding: "0"}}>
+                <Table responsive hover
+                       style={{ margin: "0",
+                           border: "3px solid #343A40"}}>
                     <HeaderAthletes />
+                    { /* TO FIX -> athletes empty or not object */ }
                 {/*JSON.stringify(products)*/}
                 { athletes.map((athlete) => {
                     return (
@@ -48,8 +51,10 @@ const HeaderAthletes = () => {
     ]
 
     return (
-        <thead>
-            <tr style={{bgColor: "red"}}>
+        <thead style={{backgroundColor: "#FFB691"}}>
+        <tr style={{
+            fontWeight: "600",
+            color: "#343A40"}}>
                 {headers.map(h => {
                     return (
                         <td> { h } </td>
@@ -64,7 +69,7 @@ const HeaderAthletes = () => {
 const RowAthletes = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-            <tr>
+            <tr style={{borderBottom: "lightgray"}}>
                 <td> { props.atleta } </td>
                 <td> { props.dataNascita }</td>
                 <td> { props.luogoNascita } </td>
