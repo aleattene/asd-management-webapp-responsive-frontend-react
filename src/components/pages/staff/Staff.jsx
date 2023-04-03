@@ -16,7 +16,9 @@ const Staff = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <StaffNavbar />
-            <Container fluid style={{minWidth: "80%"}}>
+            <Container fluid style={{
+                minWidth: "80%",
+                minHeight: "80vh"}}>
                 <Routes>
                     <Route path="/" element={<HomeStaff/>} />
                     <Route path="/products" element={<Products/>} />
