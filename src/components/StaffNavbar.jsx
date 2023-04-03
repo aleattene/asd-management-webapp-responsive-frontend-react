@@ -13,7 +13,7 @@ const StaffNavbar = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <Container fluid>
-                <Navbar bg="dark" variant="dark" expand="xxl" className="mb-1">
+                <Navbar bg="dark" variant="dark" expand="false" className="mb-1">
                     <Container fluid>
                         <Navbar.Brand href="#">
                             <Logo />

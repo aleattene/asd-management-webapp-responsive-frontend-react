@@ -1,17 +1,29 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import React from "react";
+import {Link} from "react-router-dom";
 
 function CardConstructor(props) {
     return (
-        <Card style={{ width: '18rem', aspectRatio: '4/5' }} className="card col-md-12 mt-3">
-            <Card.Img className="card-img-top" variant="top" src={props.src} alt="Servizi Offerti" />
-            <Card.Body className="card-body" style={{ height: '50%' }}>
-                <Card.Title className="mt-2" style={{ textAlign: 'center', height: '15%'}}>{ props.title }</Card.Title>
-                <Card.Text className="mt-auto" style={{ height: '3em', overflow: 'hidden', textOverflow: 'ellipsis'}}>
+        <Card style={{ height: "24rem", width: '18rem'}} className="my-3 mx-auto p-0 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <Card.Img className="card-img-top" variant="top" src={props.src} alt={props.alt}
+                      style={{ objectFit: 'cover', padding: 0, margin: 0 }} />
+            <Card.Body className="card-body"
+                       style={{ height: '40%', backgroundColor: "#FFFFFF"}} >
+                <Card.Title className="mt-2"
+                            style={{ textAlign: 'center', height: '15%'}} >
+                    { props.title }
+                </Card.Title>
+                <Card.Text className="mt-auto"
+                           style={{ height: '30%', overflowY: 'scroll', cursor: 'pointer'}} >
                     { props.description }
                 </Card.Text>
-                <Button className="btn btn-primary w-100 mt-auto" style={{ fontSize: '0.9rem' }}> { props.button }</Button>
+                <Link to={ props.linkTo } >
+                    <Button className="btn btn-primary w-100 mt-3"
+                            style={{ fontSize: '0.9rem', width: '100%', height: '40px' }} >
+                        { props.button }
+                    </Button>
+                </Link>
             </Card.Body>
         </Card>
     );
