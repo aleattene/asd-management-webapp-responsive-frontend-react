@@ -36,7 +36,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/documentations/compenso_1920_1280.jpg",
         alt: "Compensi",
-        linkTo: "/staff/documentations/trainers",
+        linkTo: "/staff/documentations/remunerations",
     },
     {
         title: "Gestione Fatture",

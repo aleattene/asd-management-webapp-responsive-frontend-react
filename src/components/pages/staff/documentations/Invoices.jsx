@@ -18,10 +18,13 @@ const Invoices = () => {
 
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <Container fluid>
-                <Table responsive>
+            <Container fluid style={{ padding: "0"}}>
+                <Table responsive hover
+                       style={{ margin: "0",
+                           border: "3px solid #343A40"}}>
                     <HeaderInvoices />
-                {/*JSON.stringify(products)*/}
+                    { /* TO FIX -> remunerations empty or not object */ }
+                    {/*JSON.stringify(products)*/}
                 { invoices.map((invoice) => {
                     return (
                         <RowInvoices
@@ -56,8 +59,10 @@ const HeaderInvoices = () => {
     ]
 
     return (
-        <thead>
-            <tr style={{bgColor: "red"}}>
+        <thead style={{backgroundColor: "#FFB691"}}>
+        <tr style={{
+            fontWeight: "600",
+            color: "#343A40"}}>
                 {headers.map(h => {
                     return (
                         <td> { h } </td>
@@ -71,8 +76,8 @@ const HeaderInvoices = () => {
 
 const RowInvoices = (props) => {
     return (
-        <tbody>
-            <tr>
+        <tbody style={{backgroundColor: "#FFFFF0"}}>
+        <tr style={{borderBottom: "lightgray"}}>
                 <td> { props.idInvoice } </td>
                 <td> { props.type }</td>
                 <td> { props.numberInvoice }</td>
