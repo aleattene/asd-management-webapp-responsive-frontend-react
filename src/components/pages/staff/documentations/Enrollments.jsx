@@ -1,36 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
-import {getProductsService} from "../../../../services/products/products.service";
 import {Table} from "react-bootstrap";
-import StaffNavbar from "../../../StaffNavbar";
-// TO FIX -> ENROLLMENTS
-const Products = () => {
+import {getEnrollmentsService} from "../../../../services/documentations/enrollments.service";
 
-    const [products, setProducts] = useState([])
+const Enrollments = () => {
+
+    const [enrollments, setEnrollments] = useState([])
 
     useEffect(() => {
-        getProducts();
+        getEnrollments();
     }, []);
 
-    const getProducts = async () => {
-        const data = await getProductsService();
-        if (data) { setProducts(data) }
+    const getEnrollments = async () => {
+        const data = await getEnrollmentsService();
+        if (data) { setEnrollments(data) }
     }
 
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
-            <StaffNavbar />
-            <Container fluid>
-                <Table responsive>
-                    <HeaderProducts />
-                {/*JSON.stringify(products)*/}
-                { products.map((prod) => {
+            <Container fluid style={{ padding: "0"}}>
+                <Table responsive hover
+                       style={{ margin: "0",
+                           border: "3px solid #343A40"}}>
+                    <HeaderEnrollments />
+                    { /* TO FIX -> enrollments empty or not object */ }
+                    {/*JSON.stringify(products)*/}
+                { enrollments.map((enrollment) => {
                     return (
-                        <RowProducts
-                            idServizio = { prod.idServizio }
-                            descrizioneServizio = { prod.descrizioneServizio }
-                            costo = { prod.costo }
-                            stato = { prod.stato }
+                        <RowEnrollments
+                            idEnrollment = { enrollment.idEnrollment }
+                            date = { enrollment.date }
+                            nameAthlete = { enrollment.nameAthlete }
+                            surnameAthlete = { enrollment.surnameAthlete }
                         />
                     )
                 })}
@@ -40,18 +41,19 @@ const Products = () => {
     );
 }
 
-const HeaderProducts = () => {
+const HeaderEnrollments = () => {
 
     const headers = [
-        "TO FIX",
-        "TO FIX",
-        "TO FIX",
-        "TO FIX"
+        "ID Iscrizione",
+        "Data Iscrizione",
+        "Atleta"
     ]
 
     return (
-        <thead>
-            <tr style={{bgColor: "red"}}>
+        <thead style={{backgroundColor: "#FFB691"}}>
+        <tr style={{
+            fontWeight: "600",
+            color: "#343A40"}}>
                 {headers.map(h => {
                     return (
                         <td> { h } </td>
@@ -63,14 +65,13 @@ const HeaderProducts = () => {
 };
 
 
-const RowProducts = (props) => {
+const RowEnrollments = (props) => {
     return (
-        <tbody>
-            <tr>
-                <td> { props.idServizio } </td>
-                <td> { props.descrizioneServizio }</td>
-                <td> € { props.costo.toFixed(2) } </td>
-                <td> { props.stato } </td>
+        <tbody style={{backgroundColor: "#FFFFF0"}}>
+        <tr style={{borderBottom: "lightgray"}}>
+                <td> { props.idEnrollment } </td>
+                <td> { props.date }</td>
+                <td> { props.surnameAthlete + " " + props.nameAthlete } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -82,12 +83,4 @@ const RowProducts = (props) => {
     )
 }
 
-
-
-
-
-
-
-
-
-export default Products;
+export default Enrollments;
