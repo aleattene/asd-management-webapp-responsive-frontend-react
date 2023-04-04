@@ -27,7 +27,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/documentations/certificazione_1920_1280.jpg",
         alt: "Certificazioni Sanitarie",
-        linkTo: "/staff/documents/healtcerts",
+        linkTo: "/staff/documentations/healtcerts",
     },
     {
         title: "Compensi Collaboratori",
@@ -60,7 +60,7 @@ const cardProperties = [
         button: "Seleziona",
         src: process.env.PUBLIC_URL + "/img/staff/documentations/ricevuta_1920_1280.jpg",
         alt: "Ricevute",
-        linkTo: "/staff/customers/receipts",
+        linkTo: "/staff/documentations/receipts",
     },
     {
         title: "Title",
