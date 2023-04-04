@@ -5,7 +5,8 @@ import {Link} from "react-router-dom";
 
 function CardConstructor(props) {
     return (
-        <Card style={{ height: "24rem", width: '18rem'}} className="my-3 mx-auto p-0 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+        <Card className="my-3 p-0 col-lg-4 col-md-4 col-sm-6 col-xs-12"
+            style={{ height: "24rem", width: '18rem', margin: "2%"}} >
             <Card.Img className="card-img-top" variant="top" src={props.src} alt={props.alt}
                       style={{ objectFit: 'cover', padding: 0, margin: 0 }} />
             <Card.Body className="card-body"
