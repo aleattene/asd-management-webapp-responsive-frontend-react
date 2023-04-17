@@ -2,13 +2,22 @@ import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Row} from "react-bootstrap";
 import CardConstructor from "../../../layout/Card";
+import transactionsCard from './../../../../assets/img/staff/documentations/movimento_1920_1280.jpg'
+import enrollmentsCard from './../../../../assets/img/staff/documentations/iscrizione_1920_1280.jpg'
+import healtcertsCard from './../../../../assets/img/staff/documentations/certificazione_1920_1280.jpg'
+import remunerationsCard from './../../../../assets/img/staff/documentations/compenso_1920_1280.jpg'
+import invoicesCard from './../../../../assets/img/staff/documentations/fattura_1920_1280.jpg'
+import purchasesCard from './../../../../assets/img/staff/documentations/acquisto_1920_1280.jpg'
+import receiptsCard from './../../../../assets/img/staff/documentations/ricevuta_1920_1280.jpg'
+import documentationsCard from './../../../../assets/img/staff/documentations/tmp_1920_1200.jpg'
+
 
 const cardProperties = [
     {
         title: "Movimenti Finanziari",
         description: "In questa sezione è possibile gestire i movimenti finanziari della A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/movimento_1920_1280.jpg",
+        src: transactionsCard,
         alt: "Movimenti Finanziari",
         linkTo: "/staff/documentations/transactions"
     },
@@ -16,7 +25,7 @@ const cardProperties = [
         title: "Iscrizioni Atleti",
         description: "In questa sezione è possibile gestire le iscrizioni degli atleti alla A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/iscrizione_1920_1280.jpg",
+        src: enrollmentsCard,
         alt: "Iscrizioni",
         linkTo: "/staff/documentations/enrollments",
     },
@@ -25,7 +34,7 @@ const cardProperties = [
         description: "In questa sezione è possibile gestire le certificazioni di idoneità sportiva " +
             "degli atleti iscritti alla A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/certificazione_1920_1280.jpg",
+        src: healtcertsCard,
         alt: "Certificazioni Sanitarie",
         linkTo: "/staff/documentations/healtcerts",
     },
@@ -34,7 +43,7 @@ const cardProperties = [
         description: "In questa sezione è possibile gestire i compensi relativi ai collaboratori " +
             "che interagiscono con la A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/compenso_1920_1280.jpg",
+        src: remunerationsCard,
         alt: "Compensi",
         linkTo: "/staff/documentations/remunerations",
     },
@@ -42,7 +51,7 @@ const cardProperties = [
         title: "Gestione Fatture",
         description: "In questa sezione è possibile gestire le fatture relative alla A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/fattura_1920_1280.jpg",
+        src: invoicesCard,
         alt: "Fatture",
         linkTo: "/staff/documentations/invoices",
     },
@@ -50,7 +59,7 @@ const cardProperties = [
         title: "Registrazione Acquisti",
         description: "In questa sezione è possibile gestire gli acquisti effettuati dalla A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/acquisto_1920_1280.jpg",
+        src: purchasesCard,
         alt: "Acquisti",
         linkTo: "/staff/documentations/purchases",
     },
@@ -58,7 +67,7 @@ const cardProperties = [
         title: "Ricevute Fiscali",
         description: "In questa sezione è possibile gestire le ricevute fiscale della A.S.D.",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/ricevuta_1920_1280.jpg",
+        src: receiptsCard,
         alt: "Ricevute",
         linkTo: "/staff/documentations/receipts",
     },
@@ -66,7 +75,7 @@ const cardProperties = [
         title: "Title",
         description: "Work in progess",
         button: "Seleziona",
-        src: import.meta.env + "/img/staff/documentations/tmp_1920_1200.jpg",
+        src: documentationsCard,
         alt: "Work in progress",
         linkTo: "/staff/documentations",
     }
