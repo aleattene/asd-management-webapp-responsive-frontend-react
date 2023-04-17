@@ -10,7 +10,10 @@
     "web-vitals": "^3.3.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "jsdom": "^21.1.1",
     "vite": "^4.2.1",
     "vite-plugin-svgr": "^2.4.0",
     "vitest": "^0.30.1"
