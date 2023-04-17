@@ -1,5 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import React from "react";
+import boltCarousel from './../assets/img/home/bolt_1920_910.jpg'
+import rossiCarousel from './../assets/img/home/rossi_1920_910.jpg'
+import federerCarousel from './../assets/img/home/federer_1920_910.jpg'
 
 function CarouselThreeSlides() {
     return (
@@ -8,7 +11,7 @@ function CarouselThreeSlides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="./img/bolt_1920_910.jpg"
+                    src={boltCarousel}
                     alt="First slide"
                 />
                 <Carousel.Caption>
@@ -17,7 +20,7 @@ function CarouselThreeSlides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="./img/rossi_1920_910.jpg"
+                    src={rossiCarousel}
                     alt="Second slide"
                 />
                 <Carousel.Caption>
@@ -26,7 +29,7 @@ function CarouselThreeSlides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="./img/federer_1920_910.jpg"
+                    src={federerCarousel}
                     alt="Third slide"
                 />
                 <Carousel.Caption>

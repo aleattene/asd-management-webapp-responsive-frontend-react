@@ -1,4 +1,4 @@
-import logo from '../assets/img/logo.jpg';
+import logo from '../assets/navbar/logo.jpg';
 import React from "react";
 
 const Logo = () => {

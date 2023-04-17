@@ -2,13 +2,17 @@ import React from 'react';
 import Container from "react-bootstrap/Container";
 import CardConstructor from "../../layout/Card";
 import {Row} from "react-bootstrap";
+import servicesCard from './../../../assets/img/staff/servizio_1920_1280.jpg'
+import documentationCard from './../../../assets/img/staff/documentazione_1920_1280.jpg'
+import customersCard from './../../../assets/img/staff/anagrafica_1920_1280.jpg'
+import tendersCard from './../../../assets/img/staff/bando_1920_1280.jpg'
 
 const cardProperties = [
     {
         title: "Gestione Prodotti",
         description: "In questa Sezione è possibile gestire i servizi erogati dalla A.S.D.",
         button: "Seleziona",
-        src: process.env.PUBLIC_URL + "/img/staff/servizio_1920_1280.jpg",
+        src: servicesCard,
         alt: "Prodotti",
         linkTo: "./products"
     },
@@ -16,7 +20,7 @@ const cardProperties = [
         title: "Gestione Documentazione",
         description: "In questa sezione è possibile gestire la documentazione della A.S.D.",
         button: "Seleziona",
-        src: process.env.PUBLIC_URL + "/img/staff/documentazione_1920_1280.jpg",
+        src: documentationCard,
         alt: "Documenti",
         linkTo: "./documentations",
     },
@@ -25,7 +29,7 @@ const cardProperties = [
         description: "In questa sezione è possibile gestire le schede anagrafiche dei soggetti," +
             "aventi interazione con la A.S.D.",
         button: "Seleziona",
-        src: process.env.PUBLIC_URL + "/img/staff/anagrafica_1920_1280.jpg",
+        src: customersCard,
         alt: "Anagrafiche",
         linkTo: "./customers",
     },
@@ -34,7 +38,7 @@ const cardProperties = [
         description: "In questa sezione sono consultabili le informazioni inerenti i " +
             "bandi istituzionali a cui la A.S.D. può prendere parte.",
         button: "Seleziona",
-        src: process.env.PUBLIC_URL + "/img/staff/bando_1920_1280.jpg",
+        src: tendersCard,
         alt: "Bandi",
         linkTo: "./tenders",
     }
