@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getHealtcertsService} from "../../../../services/documentations/healtcerts.service";
+import {getHealtcertsService} from "../../../services/documentations/healtcerts.service.js";
 
-const Healtcerts = () => {
+const HealtcertsPage = () => {
 
     const [healtcerts, setHealtcerts] = useState([])
 
@@ -90,4 +90,4 @@ const RowHealtcerts = (props) => {
     )
 }
 
-export default Healtcerts;
+export default HealtcertsPage;

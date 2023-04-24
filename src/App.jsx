@@ -1,19 +1,19 @@
 import './App.css';
-import Home from "./components/pages/Home";
+import HomePage from "./pages/HomePage.jsx";
 import {Route, Routes} from "react-router-dom";
 import React from "react";
 import Footer from "./components/Footer";
-import HomeAdmin from "./components/pages/admin/HomeAdmin";
-import Staff from "./components/pages/staff/Staff";
+import HomeAdminPage from "./pages/admin/HomeAdminPage.jsx";
+import StaffPages from "./pages/staff/StaffPages.jsx";
 
 function App() {
   return (
       <div className="App">
           <div className="main-container">
                   <Routes>
-                      <Route path="/" element={<Home/>} />
-                      <Route path="/admin/*" element={<HomeAdmin/>} />
-                      <Route path="/staff/*" element={<Staff/>} />
+                      <Route path="/" element={<HomePage/>} />
+                      <Route path="/admin/*" element={<HomeAdminPage/>} />
+                      <Route path="/staff/*" element={<StaffPages/>} />
                       {/* <Route path="*" element={<Home/>} /> */}
                   </Routes>
               <Footer/>

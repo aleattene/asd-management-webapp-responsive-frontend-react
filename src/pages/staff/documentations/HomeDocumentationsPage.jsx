@@ -1,15 +1,15 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Row} from "react-bootstrap";
-import CardConstructor from "../../../layout/CardComponent.jsx";
-import transactionsCard from './../../../../assets/img/staff/documentations/movimento_1920_1280.jpg'
-import enrollmentsCard from './../../../../assets/img/staff/documentations/iscrizione_1920_1280.jpg'
-import healtcertsCard from './../../../../assets/img/staff/documentations/certificazione_1920_1280.jpg'
-import remunerationsCard from './../../../../assets/img/staff/documentations/compenso_1920_1280.jpg'
-import invoicesCard from './../../../../assets/img/staff/documentations/fattura_1920_1280.jpg'
-import purchasesCard from './../../../../assets/img/staff/documentations/acquisto_1920_1280.jpg'
-import receiptsCard from './../../../../assets/img/staff/documentations/ricevuta_1920_1280.jpg'
-import documentationsCard from './../../../../assets/img/staff/documentations/tmp_1920_1200.jpg'
+import CardConstructor from "../../../components/layout/CardComponent.jsx";
+import transactionsCard from '../../../assets/img/staff/documentations/movimento_1920_1280.jpg'
+import enrollmentsCard from '../../../assets/img/staff/documentations/iscrizione_1920_1280.jpg'
+import healtcertsCard from '../../../assets/img/staff/documentations/certificazione_1920_1280.jpg'
+import remunerationsCard from '../../../assets/img/staff/documentations/compenso_1920_1280.jpg'
+import invoicesCard from '../../../assets/img/staff/documentations/fattura_1920_1280.jpg'
+import purchasesCard from '../../../assets/img/staff/documentations/acquisto_1920_1280.jpg'
+import receiptsCard from '../../../assets/img/staff/documentations/ricevuta_1920_1280.jpg'
+import documentationsCard from '../../../assets/img/staff/documentations/tmp_1920_1200.jpg'
 
 
 const cardProperties = [

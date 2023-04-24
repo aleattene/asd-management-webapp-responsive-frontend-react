@@ -1,8 +1,8 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
-import AdminNavbar from "../../AdminNavbar";
+import AdminNavbar from "../../components/AdminNavbar.jsx";
 
-const HomeAdmin = () => {
+const HomeAdminPage = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <AdminNavbar />
@@ -13,4 +13,4 @@ const HomeAdmin = () => {
     );
 }
 
-export default HomeAdmin;
+export default HomeAdminPage;

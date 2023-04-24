@@ -1,9 +1,9 @@
 import React from 'react';
-import CarouselThreeSlides from "../Carousel";
+import CarouselThreeSlides from "../components/Carousel.jsx";
 import Container from "react-bootstrap/Container";
-import HomeNavbar from "../HomeNavbar";
+import HomeNavbar from "../components/HomeNavbar.jsx";
 
-const Home = () => {
+const HomePage = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <HomeNavbar/>
@@ -15,4 +15,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default HomePage;

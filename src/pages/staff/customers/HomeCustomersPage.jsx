@@ -1,11 +1,11 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Row} from "react-bootstrap";
-import CardConstructor from "../../../layout/CardComponent.jsx";
-import athletesCard from "./../../../../assets/img/staff/customers/atleta_1920_1280.jpg";
-import trainersCard from "./../../../../assets/img/staff/customers/collaboratore_1920_1280.jpg";
-import doctorsCard from "./../../../../assets/img/staff/customers/medico_1920_1280.jpg";
-import companiesCard from "./../../../../assets/img/staff/customers/societa_1920_1280.jpg";
+import CardConstructor from "../../../components/layout/CardComponent.jsx";
+import athletesCard from "../../../assets/img/staff/customers/atleta_1920_1280.jpg";
+import trainersCard from "../../../assets/img/staff/customers/collaboratore_1920_1280.jpg";
+import doctorsCard from "../../../assets/img/staff/customers/medico_1920_1280.jpg";
+import companiesCard from "../../../assets/img/staff/customers/societa_1920_1280.jpg";
 
 const cardProperties = [
     {

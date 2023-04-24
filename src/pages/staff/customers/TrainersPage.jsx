@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
-import {getProductsService} from "../../../../services/products/products.service";
 import {Table} from "react-bootstrap";
+import {getTrainersService} from "../../../services/customers/trainers.service.js";
 
-const Products = () => {
+const TrainersPage = () => {
 
-    const [products, setProducts] = useState([])
+    const [trainers, setTrainers] = useState([])
 
     useEffect(() => {
-        getProducts();
+        getTrainers();
     }, []);
 
-    const getProducts = async () => {
-        const data = await getProductsService();
-        if (data) { setProducts(data) }
+    const getTrainers = async () => {
+        const data = await getTrainersService();
+        if (data) { setTrainers(data) }
     }
 
     return (
@@ -22,16 +22,15 @@ const Products = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderProducts />
-                    { /* TO FIX -> products empty or not object */ }
+                    <HeaderTrainers />
+                    { /* TO FIX -> remunerations empty or not object */ }
                 {/*JSON.stringify(products)*/}
-                { products.map((prod) => {
+                { trainers.map((trainer) => {
                     return (
-                        <RowProducts
-                            idServizio = { prod.idServizio }
-                            descrizioneServizio = { prod.descrizioneServizio }
-                            costo = { prod.costo }
-                            stato = { prod.stato }
+                        <RowTrainers
+                            cognome = { trainer.cognome }
+                            nome = { trainer.nome }
+                            fiscalCode = { trainer.fiscalCode }
                         />
                     )
                 })}
@@ -41,13 +40,12 @@ const Products = () => {
     );
 }
 
-const HeaderProducts = () => {
+const HeaderTrainers = () => {
 
     const headers = [
-        "ID Servizio",
-        "Descrizione Servizio",
-        "Costo",
-        "Stato Erogazione"
+        "Cognome",
+        "Nome",
+        "Codice Fiscale"
     ]
 
     return (
@@ -66,14 +64,13 @@ const HeaderProducts = () => {
 };
 
 
-const RowProducts = (props) => {
+const RowTrainers = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-        <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.idServizio } </td>
-                <td> { props.descrizioneServizio }</td>
-                <td> € { props.costo.toFixed(2) } </td>
-                <td> { props.stato } </td>
+            <tr style={{borderBottom: "lightgray"}}>
+                <td> { props.cognome } </td>
+                <td> { props.nome }</td>
+                <td> { props.fiscalCode } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -85,4 +82,4 @@ const RowProducts = (props) => {
     )
 }
 
-export default Products;
+export default TrainersPage;

@@ -1,11 +1,11 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
-import CardConstructor from "../../layout/CardComponent.jsx";
+import CardConstructor from "../../components/layout/CardComponent.jsx";
 import {Row} from "react-bootstrap";
-import servicesCard from './../../../assets/img/staff/servizio_1920_1280.jpg'
-import documentationCard from './../../../assets/img/staff/documentazione_1920_1280.jpg'
-import customersCard from './../../../assets/img/staff/anagrafica_1920_1280.jpg'
-import tendersCard from './../../../assets/img/staff/bando_1920_1280.jpg'
+import servicesCard from '../../assets/img/staff/servizio_1920_1280.jpg'
+import documentationCard from '../../assets/img/staff/documentazione_1920_1280.jpg'
+import customersCard from '../../assets/img/staff/anagrafica_1920_1280.jpg'
+import tendersCard from '../../assets/img/staff/bando_1920_1280.jpg'
 
 const cardProperties = [
     {

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getInvoicesService} from "../../../../services/documentations/invoices.service";
+import {getInvoicesService} from "../../../services/documentations/invoices.service.js";
 
-const Invoices = () => {
+const InvoicesPage = () => {
 
     const [invoices, setInvoices] = useState([])
 
@@ -97,4 +97,4 @@ const RowInvoices = (props) => {
     )
 }
 
-export default Invoices;
+export default InvoicesPage;

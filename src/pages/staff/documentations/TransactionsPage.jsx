@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getEnrollmentsService} from "../../../../services/documentations/enrollments.service";
+import {getTransactionsService} from "../../../services/documentations/transactions.service.js";
 
-const Enrollments = () => {
+const TransactionsPage = () => {
 
-    const [enrollments, setEnrollments] = useState([])
+    const [transactions, setTransactions] = useState([])
 
     useEffect(() => {
-        getEnrollments();
+        getTransactions();
     }, []);
 
-    const getEnrollments = async () => {
-        const data = await getEnrollmentsService();
-        if (data) { setEnrollments(data) }
+    const getTransactions = async () => {
+        const data = await getTransactionsService();
+        if (data) { setTransactions(data) }
     }
 
     return (
@@ -22,16 +22,17 @@ const Enrollments = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderEnrollments />
-                    { /* TO FIX -> enrollments empty or not object */ }
+                    <HeaderTransactions />
+                    { /* TO FIX -> transactions empty or not object */ }
                     {/*JSON.stringify(products)*/}
-                { enrollments.map((enrollment) => {
+                { transactions.map((transaction) => {
                     return (
-                        <RowEnrollments
-                            idEnrollment = { enrollment.idEnrollment }
-                            date = { enrollment.date }
-                            nameAthlete = { enrollment.nameAthlete }
-                            surnameAthlete = { enrollment.surnameAthlete }
+                        <RowTransactions
+                            idTransaction = { transaction.idTransaction }
+                            description = { transaction.description }
+                            amount = { transaction.amount }
+                            mode = { transaction.mode }
+                            date = { transaction.date }
                         />
                     )
                 })}
@@ -41,12 +42,14 @@ const Enrollments = () => {
     );
 }
 
-const HeaderEnrollments = () => {
+const HeaderTransactions = () => {
 
     const headers = [
-        "ID Iscrizione",
-        "Data Iscrizione",
-        "Atleta"
+        "ID Transazione",
+        "Descrizione",
+        "Importo",
+        "Modalità Pagamento",
+        "Data"
     ]
 
     return (
@@ -65,13 +68,15 @@ const HeaderEnrollments = () => {
 };
 
 
-const RowEnrollments = (props) => {
+const RowTransactions = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
         <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.idEnrollment } </td>
-                <td> { props.date }</td>
-                <td> { props.surnameAthlete + " " + props.nameAthlete } </td>
+                <td> { props.idTransaction } </td>
+                <td> { props.description }</td>
+                <td> € { props.amount.toFixed(2) } </td>
+                <td> { props.mode } </td>
+                <td> { props.date } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -83,4 +88,4 @@ const RowEnrollments = (props) => {
     )
 }
 
-export default Enrollments;
+export default TransactionsPage;

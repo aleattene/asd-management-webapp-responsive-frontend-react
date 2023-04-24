@@ -1,35 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getDoctorsService} from "../../../../services/customers/doctors.service";
+import {getAthletesService} from "../../../services/customers/athletes.service.js";
 
-const Doctors = () => {
+const AthletesPage = () => {
 
-    const [doctors, setDoctors] = useState([])
+    const [athletes, setAthletes] = useState([])
 
     useEffect(() => {
-        getDoctors();
+        getAthletes();
     }, []);
 
-    const getDoctors = async () => {
-        const data = await getDoctorsService();
-        if (data) { setDoctors(data) }
+    const getAthletes = async () => {
+        const data = await getAthletesService();
+        if (data) { setAthletes(data) }
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex', flexDirection: 'column' }}>
             <Container fluid style={{ padding: "0"}}>
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderDoctors />
-                    { /* TO FIX -> doctors empty or not object */ }
+                    <HeaderAthletes />
+                    { /* TO FIX -> athletes empty or not object */ }
                 {/*JSON.stringify(products)*/}
-                { doctors.map((doc) => {
+                { athletes.map((athlete) => {
                     return (
-                        <RowDoctors
-                            cognome = { doc.cognome }
-                            nome = { doc.nome }
+                        <RowAthletes
+                            atleta = { athlete.cognome + " " + athlete.nome }
+                            dataNascita = { athlete.dataNascita }
+                            luogoNascita = { athlete.luogoNascita }
+                            statoTesseramento = { athlete.statoTesseramento }
                         />
                     )
                 })}
@@ -39,11 +41,13 @@ const Doctors = () => {
     );
 }
 
-const HeaderDoctors = () => {
+const HeaderAthletes = () => {
 
     const headers = [
-        "Cognome",
-        "Nome"
+        "Atleta",
+        "Data Nascita",
+        "Luogo Nascita",
+        "Tesseramento"
     ]
 
     return (
@@ -62,12 +66,14 @@ const HeaderDoctors = () => {
 };
 
 
-const RowDoctors = (props) => {
+const RowAthletes = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-        <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.cognome } </td>
-                <td> { props.nome }</td>
+            <tr style={{borderBottom: "lightgray"}}>
+                <td> { props.atleta } </td>
+                <td> { props.dataNascita }</td>
+                <td> { props.luogoNascita } </td>
+                <td> { props.statoTesseramento } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -79,4 +85,4 @@ const RowDoctors = (props) => {
     )
 }
 
-export default Doctors;
+export default AthletesPage;

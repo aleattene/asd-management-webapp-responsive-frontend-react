@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getTrainersService} from "../../../../services/customers/trainers.service";
+import {getDoctorsService} from "../../../services/customers/doctors.service.js";
 
-const Trainers = () => {
+const DoctorsPage = () => {
 
-    const [trainers, setTrainers] = useState([])
+    const [doctors, setDoctors] = useState([])
 
     useEffect(() => {
-        getTrainers();
+        getDoctors();
     }, []);
 
-    const getTrainers = async () => {
-        const data = await getTrainersService();
-        if (data) { setTrainers(data) }
+    const getDoctors = async () => {
+        const data = await getDoctorsService();
+        if (data) { setDoctors(data) }
     }
 
     return (
@@ -22,15 +22,14 @@ const Trainers = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderTrainers />
-                    { /* TO FIX -> remunerations empty or not object */ }
+                    <HeaderDoctors />
+                    { /* TO FIX -> doctors empty or not object */ }
                 {/*JSON.stringify(products)*/}
-                { trainers.map((trainer) => {
+                { doctors.map((doc) => {
                     return (
-                        <RowTrainers
-                            cognome = { trainer.cognome }
-                            nome = { trainer.nome }
-                            fiscalCode = { trainer.fiscalCode }
+                        <RowDoctors
+                            cognome = { doc.cognome }
+                            nome = { doc.nome }
                         />
                     )
                 })}
@@ -40,12 +39,11 @@ const Trainers = () => {
     );
 }
 
-const HeaderTrainers = () => {
+const HeaderDoctors = () => {
 
     const headers = [
         "Cognome",
-        "Nome",
-        "Codice Fiscale"
+        "Nome"
     ]
 
     return (
@@ -64,13 +62,12 @@ const HeaderTrainers = () => {
 };
 
 
-const RowTrainers = (props) => {
+const RowDoctors = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-            <tr style={{borderBottom: "lightgray"}}>
+        <tr style={{borderBottom: "lightgray"}}>
                 <td> { props.cognome } </td>
                 <td> { props.nome }</td>
-                <td> { props.fiscalCode } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -82,4 +79,4 @@ const RowTrainers = (props) => {
     )
 }
 
-export default Trainers;
+export default DoctorsPage;

@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getTransactionsService} from "../../../../services/documentations/transactions.service";
+import {getEnrollmentsService} from "../../../services/documentations/enrollments.service.js";
 
-const Transactions = () => {
+const EnrollmentsPage = () => {
 
-    const [transactions, setTransactions] = useState([])
+    const [enrollments, setEnrollments] = useState([])
 
     useEffect(() => {
-        getTransactions();
+        getEnrollments();
     }, []);
 
-    const getTransactions = async () => {
-        const data = await getTransactionsService();
-        if (data) { setTransactions(data) }
+    const getEnrollments = async () => {
+        const data = await getEnrollmentsService();
+        if (data) { setEnrollments(data) }
     }
 
     return (
@@ -22,17 +22,16 @@ const Transactions = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderTransactions />
-                    { /* TO FIX -> transactions empty or not object */ }
+                    <HeaderEnrollments />
+                    { /* TO FIX -> enrollments empty or not object */ }
                     {/*JSON.stringify(products)*/}
-                { transactions.map((transaction) => {
+                { enrollments.map((enrollment) => {
                     return (
-                        <RowTransactions
-                            idTransaction = { transaction.idTransaction }
-                            description = { transaction.description }
-                            amount = { transaction.amount }
-                            mode = { transaction.mode }
-                            date = { transaction.date }
+                        <RowEnrollments
+                            idEnrollment = { enrollment.idEnrollment }
+                            date = { enrollment.date }
+                            nameAthlete = { enrollment.nameAthlete }
+                            surnameAthlete = { enrollment.surnameAthlete }
                         />
                     )
                 })}
@@ -42,14 +41,12 @@ const Transactions = () => {
     );
 }
 
-const HeaderTransactions = () => {
+const HeaderEnrollments = () => {
 
     const headers = [
-        "ID Transazione",
-        "Descrizione",
-        "Importo",
-        "Modalità Pagamento",
-        "Data"
+        "ID Iscrizione",
+        "Data Iscrizione",
+        "Atleta"
     ]
 
     return (
@@ -68,15 +65,13 @@ const HeaderTransactions = () => {
 };
 
 
-const RowTransactions = (props) => {
+const RowEnrollments = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
         <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.idTransaction } </td>
-                <td> { props.description }</td>
-                <td> € { props.amount.toFixed(2) } </td>
-                <td> { props.mode } </td>
-                <td> { props.date } </td>
+                <td> { props.idEnrollment } </td>
+                <td> { props.date }</td>
+                <td> { props.surnameAthlete + " " + props.nameAthlete } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -88,4 +83,4 @@ const RowTransactions = (props) => {
     )
 }
 
-export default Transactions;
+export default EnrollmentsPage;

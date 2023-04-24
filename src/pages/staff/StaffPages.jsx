@@ -1,22 +1,22 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Route, Routes} from "react-router-dom";
-import HomeStaff from "./HomeStaff";
-import Products from "./products/Products";
-import Customers from "./customers/Customers";
-import StaffNavbar from "../../StaffNavbar";
-import Documentations from "./documentations/Documentations";
+import HomeStaff from "./HomeStaffPage.jsx";
+import ProductsPage from "./products/ProductsPage.jsx";
+import CustomersPage from "./customers/CustomersPage.jsx";
+import StaffNavbar from "../../components/StaffNavbar.jsx";
+import Documentations from "./documentations/DocumentationsPage.jsx";
 
 
-const Staff = () => {
+const StaffPages = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <StaffNavbar />
             <Container fluid>
                 <Routes>
                     <Route path="/" element={<HomeStaff/>} />
-                    <Route path="/products/*" element={<Products/>} />
-                    <Route path="/customers/*" element={<Customers/>} />
+                    <Route path="/products/*" element={<ProductsPage/>} />
+                    <Route path="/customers/*" element={<CustomersPage/>} />
                     <Route path="/documentations/*" element={<Documentations/>} />
                 </Routes>
             </Container>
@@ -24,4 +24,4 @@ const Staff = () => {
     );
 }
 
-export default Staff;
+export default StaffPages;

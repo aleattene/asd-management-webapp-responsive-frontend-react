@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getRemunerationsService} from "../../../../services/documentations/renumerations.service";
+import {getPurchasesService} from "../../../services/documentations/purchases.service.js";
 
-const Remunerations = () => {
+const PurchasesPage = () => {
 
-    const [remunerations, setRemunerations] = useState([])
+    const [purchases, setPurchases] = useState([])
 
     useEffect(() => {
-        getRemunerations();
+        getPurchases();
     }, []);
 
-    const getRemunerations = async () => {
-        const data = await getRemunerationsService();
-        if (data) { setRemunerations(data) }
+    const getPurchases = async () => {
+        const data = await getPurchasesService();
+        if (data) { setPurchases(data) }
     }
 
     return (
@@ -22,18 +22,17 @@ const Remunerations = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderRemunerations />
+                    <HeaderPurchases />
                     { /* TO FIX -> remunerations empty or not object */ }
                     {/*JSON.stringify(products)*/}
-                { remunerations.map((remun) => {
+                { purchases.map((purchase) => {
                     return (
-                        <RowRemunerations
-                            idRemuneration = { remun.idRemuneration }
-                            trainerName = { remun.trainerName }
-                            trainerSurname = { remun.trainerSurname }
-                            amount = { remun.amount }
-                            date = { remun.date }
-                            idTransaction = { remun.idTransaction }
+                        <RowPurchases
+                            date = { purchase.date }
+                            amount = { purchase.amount }
+                            service = { purchase.service }
+                            user = { purchase.user }
+                            paymentMethod = { purchase.paymentMethod }
                         />
                     )
                 })}
@@ -43,21 +42,21 @@ const Remunerations = () => {
     );
 }
 
-const HeaderRemunerations = () => {
+const HeaderPurchases = () => {
 
     const headers = [
-        "ID Compenso",
-        "Collaboratore",
-        "Importo Compenso",
-        "Data Erogazione",
-        "ID Transazione"
+        "Data Acquisto",
+        "Importo",
+        "Servizio Acquistato",
+        "Utente",
+        "Metodo di Pagamento"
     ]
 
     return (
         <thead style={{backgroundColor: "#FFB691"}}>
-            <tr style={{
-                fontWeight: "600",
-                color: "#343A40"}}>
+        <tr style={{
+            fontWeight: "600",
+            color: "#343A40"}}>
                 {headers.map(h => {
                     return (
                         <td> { h } </td>
@@ -69,15 +68,15 @@ const HeaderRemunerations = () => {
 };
 
 
-const RowRemunerations = (props) => {
+const RowPurchases = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
             <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.idRemuneration } </td>
-                <td> { props.trainerName  + " " + props.trainerSurname } </td>
-                <td> € { props.amount.toFixed(2) } </td>
                 <td> { props.date } </td>
-                <td> { props.idTransaction } </td>
+                <td> € { props.amount.toFixed(2) } </td>
+                <td> { props.service } </td>
+                <td> { props.user } </td>
+                <td> { props.paymentMethod } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -89,4 +88,4 @@ const RowRemunerations = (props) => {
     )
 }
 
-export default Remunerations;
+export default PurchasesPage;

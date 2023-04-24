@@ -1,37 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
+import {getProductsService} from "../../../services/products/products.service.js";
 import {Table} from "react-bootstrap";
-import {getAthletesService} from "../../../../services/customers/athletes.service";
 
-const Athletes = () => {
+const ProductsPage = () => {
 
-    const [athletes, setAthletes] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-        getAthletes();
+        getProducts();
     }, []);
 
-    const getAthletes = async () => {
-        const data = await getAthletesService();
-        if (data) { setAthletes(data) }
+    const getProducts = async () => {
+        const data = await getProductsService();
+        if (data) { setProducts(data) }
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column' }}>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
             <Container fluid style={{ padding: "0"}}>
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderAthletes />
-                    { /* TO FIX -> athletes empty or not object */ }
+                    <HeaderProducts />
+                    { /* TO FIX -> products empty or not object */ }
                 {/*JSON.stringify(products)*/}
-                { athletes.map((athlete) => {
+                { products.map((prod) => {
                     return (
-                        <RowAthletes
-                            atleta = { athlete.cognome + " " + athlete.nome }
-                            dataNascita = { athlete.dataNascita }
-                            luogoNascita = { athlete.luogoNascita }
-                            statoTesseramento = { athlete.statoTesseramento }
+                        <RowProducts
+                            idServizio = { prod.idServizio }
+                            descrizioneServizio = { prod.descrizioneServizio }
+                            costo = { prod.costo }
+                            stato = { prod.stato }
                         />
                     )
                 })}
@@ -41,13 +41,13 @@ const Athletes = () => {
     );
 }
 
-const HeaderAthletes = () => {
+const HeaderProducts = () => {
 
     const headers = [
-        "Atleta",
-        "Data Nascita",
-        "Luogo Nascita",
-        "Tesseramento"
+        "ID Servizio",
+        "Descrizione Servizio",
+        "Costo",
+        "Stato Erogazione"
     ]
 
     return (
@@ -66,14 +66,14 @@ const HeaderAthletes = () => {
 };
 
 
-const RowAthletes = (props) => {
+const RowProducts = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-            <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.atleta } </td>
-                <td> { props.dataNascita }</td>
-                <td> { props.luogoNascita } </td>
-                <td> { props.statoTesseramento } </td>
+        <tr style={{borderBottom: "lightgray"}}>
+                <td> { props.idServizio } </td>
+                <td> { props.descrizioneServizio }</td>
+                <td> € { props.costo.toFixed(2) } </td>
+                <td> { props.stato } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -85,4 +85,4 @@ const RowAthletes = (props) => {
     )
 }
 
-export default Athletes;
+export default ProductsPage;

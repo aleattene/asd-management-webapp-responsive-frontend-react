@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getCompaniesService} from "../../../../services/customers/companies.service";
+import {getCompaniesService} from "../../../services/customers/companies.service.js";
 
-const Companies = () => {
+const CompaniesPage = () => {
 
     const [companies, setCompanies] = useState([])
 
@@ -79,4 +79,4 @@ const RowCompanies = (props) => {
     )
 }
 
-export default Companies;
+export default CompaniesPage;
