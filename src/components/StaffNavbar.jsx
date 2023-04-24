@@ -2,12 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import DropdownServices from "./dropdowns/Products";
+import DropdownServices from "./dropdowns/ProductsComponent.jsx";
 import Logo from "./Logo";
-import DropdownDocs from "./dropdowns/Documentations";
-import DropdownAnagrafiche from "./dropdowns/Customers";
-import DropdownBandi from "./dropdowns/Bandi";
-import DropdownUser from "./dropdowns/Users";
+import DropdownDocs from "./dropdowns/DocumentationsComponent.jsx";
+import DropdownAnagrafiche from "./dropdowns/CustomersComponent.jsx";
+import DropdownBandi from "./dropdowns/BandiComponent.jsx";
+import DropdownUser from "./dropdowns/UsersComponent.jsx";
 
 const StaffNavbar = () => {
     return (

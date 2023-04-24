@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from "./Logo";
-import DropdownUser from "./dropdowns/Users";
+import DropdownUser from "./dropdowns/UsersComponent.jsx";
 
 const AdminNavbar = () => {
     return (
