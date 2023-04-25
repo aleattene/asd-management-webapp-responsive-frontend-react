@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
+import {getProductsService} from "../../../../services/products/products.service.js";
 import {Table} from "react-bootstrap";
-import {getEnrollmentsService} from "../../../services/documentations/enrollments.service.js";
 
-const EnrollmentsPage = () => {
+const ProductsPage = () => {
 
-    const [enrollments, setEnrollments] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-        getEnrollments();
+        getProducts();
     }, []);
 
-    const getEnrollments = async () => {
-        const data = await getEnrollmentsService();
-        if (data) { setEnrollments(data) }
+    const getProducts = async () => {
+        const data = await getProductsService();
+        if (data) { setProducts(data) }
     }
 
     return (
@@ -22,16 +22,16 @@ const EnrollmentsPage = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderEnrollments />
-                    { /* TO FIX -> enrollments empty or not object */ }
-                    {/*JSON.stringify(products)*/}
-                { enrollments.map((enrollment) => {
+                    <HeaderProducts />
+                    { /* TO FIX -> products empty or not object */ }
+                {/*JSON.stringify(products)*/}
+                { products.map((prod) => {
                     return (
-                        <RowEnrollments
-                            idEnrollment = { enrollment.idEnrollment }
-                            date = { enrollment.date }
-                            nameAthlete = { enrollment.nameAthlete }
-                            surnameAthlete = { enrollment.surnameAthlete }
+                        <RowProducts
+                            idServizio = { prod.idServizio }
+                            descrizioneServizio = { prod.descrizioneServizio }
+                            costo = { prod.costo }
+                            stato = { prod.stato }
                         />
                     )
                 })}
@@ -41,12 +41,13 @@ const EnrollmentsPage = () => {
     );
 }
 
-const HeaderEnrollments = () => {
+const HeaderProducts = () => {
 
     const headers = [
-        "ID Iscrizione",
-        "Data Iscrizione",
-        "Atleta"
+        "ID Servizio",
+        "Descrizione Servizio",
+        "Costo",
+        "Stato Erogazione"
     ]
 
     return (
@@ -65,13 +66,14 @@ const HeaderEnrollments = () => {
 };
 
 
-const RowEnrollments = (props) => {
+const RowProducts = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
         <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.idEnrollment } </td>
-                <td> { props.date }</td>
-                <td> { props.surnameAthlete + " " + props.nameAthlete } </td>
+                <td> { props.idServizio } </td>
+                <td> { props.descrizioneServizio }</td>
+                <td> € { props.costo.toFixed(2) } </td>
+                <td> { props.stato } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -83,4 +85,4 @@ const RowEnrollments = (props) => {
     )
 }
 
-export default EnrollmentsPage;
+export default ProductsPage;

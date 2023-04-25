@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getDoctorsService} from "../../../services/customers/doctors.service.js";
+import {getEnrollmentsService} from "../../../../services/documentations/enrollments.service.js";
 
-const DoctorsPage = () => {
+const EnrollmentsPage = () => {
 
-    const [doctors, setDoctors] = useState([])
+    const [enrollments, setEnrollments] = useState([])
 
     useEffect(() => {
-        getDoctors();
+        getEnrollments();
     }, []);
 
-    const getDoctors = async () => {
-        const data = await getDoctorsService();
-        if (data) { setDoctors(data) }
+    const getEnrollments = async () => {
+        const data = await getEnrollmentsService();
+        if (data) { setEnrollments(data) }
     }
 
     return (
@@ -22,14 +22,16 @@ const DoctorsPage = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderDoctors />
-                    { /* TO FIX -> doctors empty or not object */ }
-                {/*JSON.stringify(products)*/}
-                { doctors.map((doc) => {
+                    <HeaderEnrollments />
+                    { /* TO FIX -> enrollments empty or not object */ }
+                    {/*JSON.stringify(products)*/}
+                { enrollments.map((enrollment) => {
                     return (
-                        <RowDoctors
-                            cognome = { doc.cognome }
-                            nome = { doc.nome }
+                        <RowEnrollments
+                            idEnrollment = { enrollment.idEnrollment }
+                            date = { enrollment.date }
+                            nameAthlete = { enrollment.nameAthlete }
+                            surnameAthlete = { enrollment.surnameAthlete }
                         />
                     )
                 })}
@@ -39,11 +41,12 @@ const DoctorsPage = () => {
     );
 }
 
-const HeaderDoctors = () => {
+const HeaderEnrollments = () => {
 
     const headers = [
-        "Cognome",
-        "Nome"
+        "ID Iscrizione",
+        "Data Iscrizione",
+        "Atleta"
     ]
 
     return (
@@ -62,12 +65,13 @@ const HeaderDoctors = () => {
 };
 
 
-const RowDoctors = (props) => {
+const RowEnrollments = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
         <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.cognome } </td>
-                <td> { props.nome }</td>
+                <td> { props.idEnrollment } </td>
+                <td> { props.date }</td>
+                <td> { props.surnameAthlete + " " + props.nameAthlete } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -79,4 +83,4 @@ const RowDoctors = (props) => {
     )
 }
 
-export default DoctorsPage;
+export default EnrollmentsPage;

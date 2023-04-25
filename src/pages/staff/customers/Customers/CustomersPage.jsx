@@ -1,11 +1,11 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Route, Routes} from "react-router-dom";
-import HomeCustomers from "./HomeCustomersPage.jsx";
-import AthletesPage from "./AthletesPage.jsx";
-import TrainersPage from "./TrainersPage.jsx";
-import DoctorsPage from "./DoctorsPage.jsx";
-import CompaniesPage from "./CompaniesPage.jsx";
+import HomeCustomers from "../HomeCustomersPage.jsx";
+import AthletesPage from "../Athletes/AthletesPage.jsx";
+import TrainersPage from "../Trainers/TrainersPage.jsx";
+import DoctorsPage from "../Doctors/DoctorsPage.jsx";
+import CompaniesPage from "../Companies/CompaniesPage.jsx";
 
 const CustomersPage = () => {
     return (

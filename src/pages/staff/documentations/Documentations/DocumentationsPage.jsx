@@ -1,13 +1,13 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Route, Routes} from "react-router-dom";
-import HomeDocumentations from "./HomeDocumentationsPage.jsx";
-import TransactionsPage from "./TransactionsPage.jsx";
-import InvoicesPage from "./InvoicesPage.jsx";
-import RemunerationsPage from "./RemunerationsPage.jsx";
-import EnrollmentsPage from "./EnrollmentsPage.jsx";
-import HealtcertsPage from "./HealtcertsPage.jsx";
-import PurchasesPage from "./PurchasesPage.jsx";
+import HomeDocumentations from "../HomeDocumentationsPage.jsx";
+import TransactionsPage from "../Transactions/TransactionsPage.jsx";
+import InvoicesPage from "../Invoices/InvoicesPage.jsx";
+import RemunerationsPage from "../Remunerations/RemunerationsPage.jsx";
+import EnrollmentsPage from "../Enrollments/EnrollmentsPage.jsx";
+import HealtcertsPage from "../Healtcerts/HealtcertsPage.jsx";
+import PurchasesPage from "../Purchases/PurchasesPage.jsx";
 
 const Customers = () => {
     return (

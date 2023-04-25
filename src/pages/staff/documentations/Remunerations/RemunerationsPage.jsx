@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getRemunerationsService} from "../../../services/documentations/renumerations.service.js";
+import {getRemunerationsService} from "../../../../services/documentations/renumerations.service.js";
 
 const RemunerationsPage = () => {
 

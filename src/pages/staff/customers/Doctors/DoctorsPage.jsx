@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
-import {getProductsService} from "../../../services/products/products.service.js";
 import {Table} from "react-bootstrap";
+import {getDoctorsService} from "../../../../services/customers/doctors.service.js";
 
-const ProductsPage = () => {
+const DoctorsPage = () => {
 
-    const [products, setProducts] = useState([])
+    const [doctors, setDoctors] = useState([])
 
     useEffect(() => {
-        getProducts();
+        getDoctors();
     }, []);
 
-    const getProducts = async () => {
-        const data = await getProductsService();
-        if (data) { setProducts(data) }
+    const getDoctors = async () => {
+        const data = await getDoctorsService();
+        if (data) { setDoctors(data) }
     }
 
     return (
@@ -22,16 +22,14 @@ const ProductsPage = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderProducts />
-                    { /* TO FIX -> products empty or not object */ }
+                    <HeaderDoctors />
+                    { /* TO FIX -> doctors empty or not object */ }
                 {/*JSON.stringify(products)*/}
-                { products.map((prod) => {
+                { doctors.map((doc) => {
                     return (
-                        <RowProducts
-                            idServizio = { prod.idServizio }
-                            descrizioneServizio = { prod.descrizioneServizio }
-                            costo = { prod.costo }
-                            stato = { prod.stato }
+                        <RowDoctors
+                            cognome = { doc.cognome }
+                            nome = { doc.nome }
                         />
                     )
                 })}
@@ -41,13 +39,11 @@ const ProductsPage = () => {
     );
 }
 
-const HeaderProducts = () => {
+const HeaderDoctors = () => {
 
     const headers = [
-        "ID Servizio",
-        "Descrizione Servizio",
-        "Costo",
-        "Stato Erogazione"
+        "Cognome",
+        "Nome"
     ]
 
     return (
@@ -66,14 +62,12 @@ const HeaderProducts = () => {
 };
 
 
-const RowProducts = (props) => {
+const RowDoctors = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
         <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.idServizio } </td>
-                <td> { props.descrizioneServizio }</td>
-                <td> € { props.costo.toFixed(2) } </td>
-                <td> { props.stato } </td>
+                <td> { props.cognome } </td>
+                <td> { props.nome }</td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -85,4 +79,4 @@ const RowProducts = (props) => {
     )
 }
 
-export default ProductsPage;
+export default DoctorsPage;

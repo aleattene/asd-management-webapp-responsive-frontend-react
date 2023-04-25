@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getCompaniesService} from "../../../services/customers/companies.service.js";
+import {getCompaniesService} from "../../../../services/customers/companies.service.js";
 
 const CompaniesPage = () => {
 

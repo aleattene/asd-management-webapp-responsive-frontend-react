@@ -4,7 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import React from "react";
 import Footer from "./components/Footer";
 import HomeAdminPage from "./pages/admin/HomeAdminPage.jsx";
-import StaffPages from "./pages/staff/StaffPages.jsx";
+import StaffRoutes from "./routes/staff/StaffRoutes.jsx";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
                   <Routes>
                       <Route path="/" element={<HomePage/>} />
                       <Route path="/admin/*" element={<HomeAdminPage/>} />
-                      <Route path="/staff/*" element={<StaffPages/>} />
+                      <Route path="/staff/*" element={<StaffRoutes/>} />
                       {/* <Route path="*" element={<Home/>} /> */}
                   </Routes>
               <Footer/>

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getTransactionsService} from "../../../services/documentations/transactions.service.js";
+import {getTransactionsService} from "../../../../services/documentations/transactions.service.js";
 
 const TransactionsPage = () => {
 

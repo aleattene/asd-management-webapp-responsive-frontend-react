@@ -1,36 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getTrainersService} from "../../../services/customers/trainers.service.js";
+import {getAthletesService} from "../../../../services/customers/athletes.service.js";
 
-const TrainersPage = () => {
+const AthletesPage = () => {
 
-    const [trainers, setTrainers] = useState([])
+    const [athletes, setAthletes] = useState([])
 
     useEffect(() => {
-        getTrainers();
+        getAthletes();
     }, []);
 
-    const getTrainers = async () => {
-        const data = await getTrainersService();
-        if (data) { setTrainers(data) }
+    const getAthletes = async () => {
+        const data = await getAthletesService();
+        if (data) { setAthletes(data) }
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex', flexDirection: 'column' }}>
             <Container fluid style={{ padding: "0"}}>
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderTrainers />
-                    { /* TO FIX -> remunerations empty or not object */ }
+                    <HeaderAthletes />
+                    { /* TO FIX -> athletes empty or not object */ }
                 {/*JSON.stringify(products)*/}
-                { trainers.map((trainer) => {
+                { athletes.map((athlete) => {
                     return (
-                        <RowTrainers
-                            cognome = { trainer.cognome }
-                            nome = { trainer.nome }
-                            fiscalCode = { trainer.fiscalCode }
+                        <RowAthletes
+                            atleta = { athlete.cognome + " " + athlete.nome }
+                            dataNascita = { athlete.dataNascita }
+                            luogoNascita = { athlete.luogoNascita }
+                            statoTesseramento = { athlete.statoTesseramento }
                         />
                     )
                 })}
@@ -40,12 +41,13 @@ const TrainersPage = () => {
     );
 }
 
-const HeaderTrainers = () => {
+const HeaderAthletes = () => {
 
     const headers = [
-        "Cognome",
-        "Nome",
-        "Codice Fiscale"
+        "Atleta",
+        "Data Nascita",
+        "Luogo Nascita",
+        "Tesseramento"
     ]
 
     return (
@@ -64,13 +66,14 @@ const HeaderTrainers = () => {
 };
 
 
-const RowTrainers = (props) => {
+const RowAthletes = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
             <tr style={{borderBottom: "lightgray"}}>
-                <td> { props.cognome } </td>
-                <td> { props.nome }</td>
-                <td> { props.fiscalCode } </td>
+                <td> { props.atleta } </td>
+                <td> { props.dataNascita }</td>
+                <td> { props.luogoNascita } </td>
+                <td> { props.statoTesseramento } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -82,4 +85,4 @@ const RowTrainers = (props) => {
     )
 }
 
-export default TrainersPage;
+export default AthletesPage;

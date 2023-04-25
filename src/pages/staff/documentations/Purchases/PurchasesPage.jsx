@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Container from "react-bootstrap/Container";
 import {Table} from "react-bootstrap";
-import {getHealtcertsService} from "../../../services/documentations/healtcerts.service.js";
+import {getPurchasesService} from "../../../../services/documentations/purchases.service.js";
 
-const HealtcertsPage = () => {
+const PurchasesPage = () => {
 
-    const [healtcerts, setHealtcerts] = useState([])
+    const [purchases, setPurchases] = useState([])
 
     useEffect(() => {
-        getHealtcerts();
+        getPurchases();
     }, []);
 
-    const getHealtcerts = async () => {
-        const data = await getHealtcertsService();
-        if (data) { setHealtcerts(data) }
+    const getPurchases = async () => {
+        const data = await getPurchasesService();
+        if (data) { setPurchases(data) }
     }
 
     return (
@@ -22,19 +22,17 @@ const HealtcertsPage = () => {
                 <Table responsive hover
                        style={{ margin: "0",
                            border: "3px solid #343A40"}}>
-                    <HeaderHealtcerts />
+                    <HeaderPurchases />
                     { /* TO FIX -> remunerations empty or not object */ }
                     {/*JSON.stringify(products)*/}
-                { healtcerts.map((cert) => {
+                { purchases.map((purchase) => {
                     return (
-                        <RowHealtcerts
-                            idCerts = { cert.idCerts }
-                            nameAthlete = { cert.nameAthlete }
-                            surnameAthlete = { cert.surnameAthlete }
-                            dateStart = { cert.dateStart }
-                            dateEnd = { cert.dateEnd }
-                            nameDoctor = { cert.nameDoctor }
-                            surnameDoctor = { cert.surnameDoctor }
+                        <RowPurchases
+                            date = { purchase.date }
+                            amount = { purchase.amount }
+                            service = { purchase.service }
+                            user = { purchase.user }
+                            paymentMethod = { purchase.paymentMethod }
                         />
                     )
                 })}
@@ -44,14 +42,14 @@ const HealtcertsPage = () => {
     );
 }
 
-const HeaderHealtcerts = () => {
+const HeaderPurchases = () => {
 
     const headers = [
-        "ID Certificato",
-        "Atleta",
-        "Data Inizio Validità",
-        "Data Scadenza",
-        "Medico Responsabile"
+        "Data Acquisto",
+        "Importo",
+        "Servizio Acquistato",
+        "Utente",
+        "Metodo di Pagamento"
     ]
 
     return (
@@ -70,15 +68,15 @@ const HeaderHealtcerts = () => {
 };
 
 
-const RowHealtcerts = (props) => {
+const RowPurchases = (props) => {
     return (
         <tbody style={{backgroundColor: "#FFFFF0"}}>
-        <tr style={{borderBottom: "lightgray"}}>
-            <td> { props.idCerts } </td>
-            <td> { props.surnameAthlete + " " + props.nameAthlete } </td>
-            <td> { props.dateStart }</td>
-            <td> { props.dateEnd }</td>
-            <td> { props.surnameDoctor + " " + props.nameDoctor } </td>
+            <tr style={{borderBottom: "lightgray"}}>
+                <td> { props.date } </td>
+                <td> € { props.amount.toFixed(2) } </td>
+                <td> { props.service } </td>
+                <td> { props.user } </td>
+                <td> { props.paymentMethod } </td>
                 {/* <td>
                     <Form.Check/>
                     <Form.Check disabled/>
@@ -90,4 +88,4 @@ const RowHealtcerts = (props) => {
     )
 }
 
-export default HealtcertsPage;
+export default PurchasesPage;

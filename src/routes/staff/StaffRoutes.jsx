@@ -1,27 +1,27 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
 import {Route, Routes} from "react-router-dom";
-import HomeStaff from "./HomeStaffPage.jsx";
-import ProductsPage from "./products/ProductsPage.jsx";
-import CustomersPage from "./customers/CustomersPage.jsx";
+import HomeStaffPage from "../../pages/staff/HomeStaffPage.jsx";
+import ProductsPage from "../../pages/staff/products/Products/ProductsPage.jsx";
+import CustomersPage from "../../pages/staff/customers/Customers/CustomersPage.jsx";
 import StaffNavbar from "../../components/StaffNavbar.jsx";
-import Documentations from "./documentations/DocumentationsPage.jsx";
+import DocumentationsPage from "../../pages/staff/documentations/Documentations/DocumentationsPage.jsx";
 
 
-const StaffPages = () => {
+const StaffRoutes = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <StaffNavbar />
             <Container fluid>
                 <Routes>
-                    <Route path="/" element={<HomeStaff/>} />
+                    <Route path="/" element={<HomeStaffPage/>} />
                     <Route path="/products/*" element={<ProductsPage/>} />
                     <Route path="/customers/*" element={<CustomersPage/>} />
-                    <Route path="/documentations/*" element={<Documentations/>} />
+                    <Route path="/documentations/*" element={<DocumentationsPage/>} />
                 </Routes>
             </Container>
         </div>
     );
 }
 
-export default StaffPages;
+export default StaffRoutes;
