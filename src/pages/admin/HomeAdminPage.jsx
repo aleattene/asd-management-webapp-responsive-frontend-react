@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from "react-bootstrap/Container";
-import AdminNavbar from "../../components/AdminNavbar.jsx";
+import AdminNavbar from "../../components/layout/Navbar/AdminNavbar.jsx";
 
 const HomeAdminPage = () => {
     return (

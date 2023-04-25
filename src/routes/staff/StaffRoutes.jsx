@@ -4,7 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import HomeStaffPage from "../../pages/staff/HomeStaffPage.jsx";
 import ProductsPage from "../../pages/staff/products/Products/ProductsPage.jsx";
 import CustomersPage from "../../pages/staff/customers/Customers/CustomersPage.jsx";
-import StaffNavbar from "../../components/StaffNavbar.jsx";
+import StaffNavbar from "../../components/layout/Navbar/StaffNavbar.jsx";
 import DocumentationsPage from "../../pages/staff/documentations/Documentations/DocumentationsPage.jsx";
 
 

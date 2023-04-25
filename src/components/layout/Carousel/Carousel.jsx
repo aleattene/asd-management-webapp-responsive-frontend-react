@@ -1,8 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import React from "react";
-import boltCarousel from './../assets/img/home/bolt_1920_910.jpg'
-import rossiCarousel from './../assets/img/home/rossi_1920_910.jpg'
-import federerCarousel from './../assets/img/home/federer_1920_910.jpg'
+import boltCarousel from '../../../assets/img/home/bolt_1920_910.jpg'
+import rossiCarousel from '../../../assets/img/home/rossi_1920_910.jpg'
+import federerCarousel from '../../../assets/img/home/federer_1920_910.jpg'
 
 function CarouselThreeSlides() {
     return (

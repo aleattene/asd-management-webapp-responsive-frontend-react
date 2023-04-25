@@ -2,7 +2,7 @@ import './App.css';
 import HomePage from "./pages/HomePage.jsx";
 import {Route, Routes} from "react-router-dom";
 import React from "react";
-import Footer from "./components/Footer";
+import FooterComponent from "./components/layout/Footer/FooterComponent.jsx";
 import HomeAdminPage from "./pages/admin/HomeAdminPage.jsx";
 import StaffRoutes from "./routes/staff/StaffRoutes.jsx";
 
@@ -16,7 +16,7 @@ function App() {
                       <Route path="/staff/*" element={<StaffRoutes/>} />
                       {/* <Route path="*" element={<Home/>} /> */}
                   </Routes>
-              <Footer/>
+              <FooterComponent/>
           </div>
           <style>
               {`

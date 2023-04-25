@@ -1,7 +1,7 @@
 import React from 'react';
-import CarouselThreeSlides from "../components/Carousel.jsx";
+import CarouselThreeSlides from "../components/layout/Carousel/Carousel.jsx";
 import Container from "react-bootstrap/Container";
-import HomeNavbar from "../components/HomeNavbar.jsx";
+import HomeNavbar from "../components/layout/Navbar/HomeNavbar.jsx";
 
 const HomePage = () => {
     return (

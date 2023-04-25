@@ -2,16 +2,13 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import DropdownServices from "./dropdowns/ProductsComponent.jsx";
-import Logo from "./Logo";
-import DropdownDocs from "./dropdowns/DocumentationsComponent.jsx";
-import DropdownAnagrafiche from "./dropdowns/CustomersComponent.jsx";
-import DropdownBandi from "./dropdowns/BandiComponent.jsx";
-import DropdownUser from "./dropdowns/UsersComponent.jsx";
+import Logo from "../Logo/Logo.jsx";
+import {NavLink} from "react-router-dom";
 
-const StaffNavbar = () => {
+const HomeNavbar = () => {
     return (
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex',
+            flexDirection: 'column'}}>
             <Container fluid>
                 <Navbar bg="dark" variant="dark" expand="false" className="mb-1">
                     <Container fluid>
@@ -21,11 +18,12 @@ const StaffNavbar = () => {
                         <Navbar.Toggle aria-controls="navbar-nav" />
                         <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                             <Nav>
-                                <DropdownServices className="mx-2" />
-                                <DropdownDocs className="mx-2" />
-                                <DropdownAnagrafiche className="mx-2" />
-                                <DropdownBandi className="mx-2" />
-                                <DropdownUser className="mx-2" />
+                                <NavLink to="/staff" className="nav-link mx-2">
+                                    Accesso Staff
+                                </NavLink>
+                                <NavLink to="/admin" className="nav-link mx-2">
+                                    Accesso Admin
+                                </NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
@@ -35,6 +33,6 @@ const StaffNavbar = () => {
     );
 };
 
-export default StaffNavbar;
+export default HomeNavbar;
 
 
