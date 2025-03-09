@@ -19,7 +19,7 @@ function LogoWithText() {
                     alt="Logo SM"
                 />
                 <span className="mx-4 text-lg font-bold text-gray-[#E5E7EB] text-center uppercase tracking-wider">
-          Sport Management
+          ASD Management
         </span>
             </div>
         </div>

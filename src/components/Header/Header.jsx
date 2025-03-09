@@ -34,12 +34,12 @@ function Header({ toggleSidebar }) {
 
             {/* User Dropsown Menu */}
             <div className="flex items-center">
-                <div className="flex flex-col w-48 items-center">
+                <div className="flex flex-col w-64 items-center">
           <span className="text-[#E5E7EB] mt-1 text-xl font-bold tracking-wider">
-            Attene Davide
+            Attene Alessandro
           </span>
                     <span className="text-[#E5E7EB] font-medium">
-            I.T.T. Deffenu - Olbia
+            Ruolo: Amministratore
           </span>
                 </div>
                 <div className="relative mr-8">
