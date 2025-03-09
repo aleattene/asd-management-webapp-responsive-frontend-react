@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://127.0.0.1:8000/";
-//const API_BASE_URL = "https://pcto-deffenu.vercel.app/";
+//const API_BASE_URL = "http://127.0.0.1:8000/";
+const API_BASE_URL = "https://pcto-deffenu.vercel.app/";
 const API_VERSION = "api/v1/";
 const APP = "profiles/";
 const URL = `${API_BASE_URL}${API_VERSION}${APP}`;
